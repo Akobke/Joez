@@ -6,6 +6,8 @@ import LoginForm from './LoginForm';
 import SubmitButton from './SubmitButton';
 import { observer } from 'mobx-react';
 import joez from'./Joezdotgov.png';
+import tasks from './taks.js'
+import TodoList from './todoList.js'
 
 class App extends react.Component{
   //methods to handle logging in and out
@@ -88,6 +90,7 @@ class App extends react.Component{
                 disables={false}
                 onClick={ () => this.doLogout()}
               />
+              <TodoList/>
 
             </div>
           </div>
@@ -98,9 +101,16 @@ class App extends react.Component{
         <div className="App">
           <div className='container'>
           <img className='joez' src={joez}/>
-            <LoginForm/>
-            
-          </div>
+            <LoginForm className='login'/>
+            <ol>
+              <li>Take joe for a walk</li>
+              <li>Pet joe</li>
+              <li>Kill the spares</li>
+              <li>give joe a bath</li>
+            </ol>
+            <SubmitButton text={'Add task'}/>
+            </div>
+          
         </div>
       );
     }
